@@ -1,387 +1,655 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metatesk — Step Inside Education</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <!-- SEO -->
+    <meta name="description" content="Metatesk builds immersive VR learning worlds guided by AI teachers. Students experience knowledge through interactive 3D environments instead of just memorizing it.">
+    <meta name="keywords" content="Metatesk, VR education, AI teacher, immersive learning, virtual reality, edtech, multiplayer classroom, LMS, interactive education">
+    <meta name="author" content="Metatesk">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://metatesk.com">
 
-    <link rel="stylesheet" href="assets/css/global.css">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatesk.com">
+    <meta property="og:title" content="Metatesk — Step Inside Education">
+    <meta property="og:description" content="Immersive VR learning worlds guided by AI teachers. Where students experience knowledge instead of just memorizing it.">
+    <meta property="og:image" content="https://metatesk.com/assets/logo.png">
+    <meta property="og:site_name" content="Metatesk">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="az_AZ">
 
-    <title>Metatesk</title>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Metatesk — Step Inside Education">
+    <meta name="twitter:description" content="Immersive VR learning worlds guided by AI teachers.">
+    <meta name="twitter:image" content="https://metatesk.com/assets/logo.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#482AFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0D0820" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+    <meta name="msapplication-TileColor" content="#482AFF">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Metatesk",
+        "description": "Immersive VR learning worlds guided by AI teachers",
+        "url": "https://metatesk.com",
+        "logo": "assets/logo.png",
+        "foundingDate": "2021",
+        "sameAs": [],
+        "knowsAbout": ["Virtual Reality Education", "AI Teaching", "Immersive Learning", "EdTech"]
+    }
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="container">
-        <img src="assets/img/header_bg.svg" class="header_bg" alt="">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-        <div class="header_box">
-            <div class="header_top">
-                <div class="header_logo">
-                    <img src="assets/img/logo.svg" alt="">
-                </div>
-                <div class="header_right">
-                    <a href="#" type="button" class="btn-custom btn-yellow" data-bs-toggle="modal"
-                       data-bs-target="#exampleModal">Login</a>
-                    <a href="#" class="btn-custom btn-blue"  type="button"  data-bs-toggle="modal"
-                       data-bs-target="#exampleModal2">Join</a>
-                </div>
-            </div>
-            <div class="header_content">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="header_text">
-                            <h1>Immersive <br>
-                                learning</h1>
-                            <p>exciting, entertaining, <br>
-                                engaging way of learning</p>
-                            <img src="assets/img/clips.svg" alt="" class="header_universe">
-                            <img src="assets/img/clip.png" class="header_clip" alt="">
-                        </div>
+    <!-- Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="main_img_box">
-                            <img src="assets/img/OBJECTS.svg" class="under_img" alt="">
-                            <img src="assets/img/blue_e.svg" class="over_img">
-                            <div class="slideshow">
-                                <img src="assets/img/main1.png" alt="Image 1" class="slide">
-                                <img src="assets/img/main2.png" alt="Image 2" class="slide">
-                                <img src="assets/img/main3.png" alt="Image 3" class="slide">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-3d"><canvas id="loaderCanvas"></canvas></div>
+            <div class="loader-text">
+                <span class="ll" style="--i:0">M</span><span class="ll" style="--i:1">E</span><span class="ll" style="--i:2">T</span><span class="ll" style="--i:3">A</span><span class="ll" style="--i:4">T</span><span class="ll" style="--i:5">E</span><span class="ll" style="--i:6">S</span><span class="ll" style="--i:7">K</span>
             </div>
+            <div class="loader-bar"><div class="loader-fill" id="loaderBar"></div></div>
+            <p class="loader-sub">Entering immersive world...</p>
         </div>
-
     </div>
-</header>
-<main>
-    <section class="section_padding">
+
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo"><img src="assets/logo.png" alt="Metatesk" class="nav-logo-img"></a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
+                <a href="#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+                <a href="#founder" class="nav-link" data-i18n="nav.team">Team</a>
+                <a href="#partners" class="nav-link" data-i18n="nav.partners">Partners</a>
+                <a href="#contact" class="nav-link nav-cta" data-i18n="nav.demo">Get a Demo</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                    <span class="lang-active" id="langLabel">EN</span>
+                    <span class="lang-sep">/</span>
+                    <span class="lang-alt">AZ</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+                </button>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu" id="mobMenu">
+        <a href="#about" class="mob-link" data-i18n="mob.about">About</a>
+        <a href="#product" class="mob-link" data-i18n="mob.product">Product</a>
+        <a href="#solutions" class="mob-link" data-i18n="mob.solutions">Solutions</a>
+        <a href="#founder" class="mob-link" data-i18n="mob.team">Team</a>
+        <a href="#partners" class="mob-link" data-i18n="mob.partners">Partners</a>
+        <a href="#contact" class="mob-link mob-cta" data-i18n="mob.demo">Get a Demo</a>
+        <div class="mob-controls">
+            <button class="lang-toggle" id="langToggleMob" aria-label="Switch language">
+                <span class="lang-active" id="langLabelMob">EN</span>
+                <span class="lang-sep">/</span>
+                <span class="lang-alt">AZ</span>
+            </button>
+            <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle dark mode">
+                <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <canvas id="heroCanvas" aria-label="Animated particle network background"></canvas>
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <!-- Floating CSS shapes -->
+        <div class="hero-float hero-float-1"><div class="css-float float-ring"><div class="orbit o1"><div class="electron"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="electron electron2"></div></div><div class="glow-core"></div></div></div>
+        <div class="hero-float hero-float-2"><div class="css-float float-ico"><div class="atom a1"></div><div class="atom a2"></div><div class="atom a3"></div><div class="atom a4"></div><div class="bond b1"></div><div class="bond b2"></div><div class="bond b3"></div></div></div>
+
+        <div class="hero-content">
+            <div class="hero-badge anim-in">
+                <span class="badge-dot"></span>
+                The Future of Education is Immersive
+            </div>
+            <h1 class="hero-title anim-in">
+                <span class="hero-line">Step <em>Inside</em></span>
+                <span class="hero-line">Education</span>
+            </h1>
+            <p class="hero-typed anim-in" id="heroTyped"></p>
+            <div class="hero-actions anim-in">
+                <a href="#contact" class="btn btn-primary magnetic">
+                    <span class="btn-text">Request a Demo</span>
+                    <span class="btn-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                    <span class="btn-shimmer"></span>
+                </a>
+                <a href="#about" class="btn btn-outline magnetic">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+    </section>
+
+    <!-- ==================== TRUST MARQUEE ==================== -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span class="marquee-item" data-i18n="mq.1">Forbes 30 Under 30 Europe</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.2">Google for Startups</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.3">ABB Partnership</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.4">EBRD Star Venture</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.5">Presidential Youth Award</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.6">Draper Hero Training</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.7">2x Teknofest Winner</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.8">RC Challenge Partner</span><span class="marquee-dot"></span>
+            <!-- duplicate for seamless loop -->
+            <span class="marquee-item" data-i18n="mq.1">Forbes 30 Under 30 Europe</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.2">Google for Startups</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.3">ABB Partnership</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.4">EBRD Star Venture</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.5">Presidential Youth Award</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.6">Draper Hero Training</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.7">2x Teknofest Winner</span><span class="marquee-dot"></span>
+            <span class="marquee-item" data-i18n="mq.8">RC Challenge Partner</span><span class="marquee-dot"></span>
+        </div>
+    </div>
+
+    <!-- ==================== PROBLEM ==================== -->
+    <section class="section" id="about">
+        <div class="mesh mesh-r"></div>
         <div class="container">
-            <div class="section_title">
-                <img src="assets/img/name.svg" alt="">
-                <p>is making the learning process engaging, entertaining, exciting</p>
+            <div class="sec-head">
+                <span class="tag anim-in">The Problem</span>
+                <h2 class="sec-title anim-in">The world changed.<br><span class="grad">Education didn't.</span></h2>
+                <p class="sec-sub anim-in">Students grow up in a digital, interactive world — but classrooms still rely on passive lectures, static textbooks, and memorization. The gap between how students live and how they learn keeps growing.</p>
             </div>
-            <div class="metatesk_box">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section_img left_side" data-aos="fade-right"
-                             data-aos-offset="300"
-                             data-aos-easing="ease-in-sine">
-                            <img src="assets/img/section2.png" class="person_img" alt="">
-                            <img src="assets/img/img_frame2.svg" class="frame_img" alt="">
-                            <h4>Before</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="section_img right_side" data-aos="fade-left"
-                             data-aos-offset="300"
-                             data-aos-easing="ease-in-sine">
-                            <img src="assets/img/section22.png" class="person_img" alt="">
-                            <img src="assets/img/img_frame.svg" class="frame_img" alt="">
-                            <h4>After</h4>
-                        </div>
-                    </div>
+            <div class="grid-4">
+                <div class="card tilt anim-in" style="--d:0"><div class="card-glow"></div>
+                    <div class="card-icon ci-purple"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 34h36M18 34v4M30 34v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                    <h3>Passive Learning</h3>
+                    <p>Students watch and memorize. They rarely interact with what they study. Engagement drops. Understanding stays surface-level.</p>
                 </div>
-            </div>
-            <div class="list_box">
-                <ul>
-                    <li>
-                        <img src="assets/img/video-icon.svg" alt="">
-                        <span>Live classes</span>
-                    </li>
-                    <li>
-                        <img src="assets/img/ballon-icon.svg" alt="">
-                        <span>World class teachers</span>
-                    </li>
-                    <li>
-                        <img src="assets/img/calendar-icon.svg" alt="">
-                        <span>Flexible learning options</span>
-                    </li>
-                    <li>
-                        <img src="assets/img/learn-icon.svg" alt="">
-                        <span>Learners ages 6-14</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="immersive_section">
-        <div class="title_box">
-            <h2>Immersive Learning</h2>
-        </div>
-        <div class="immersive_container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="immersive_img">
-                            <img src="assets/img/immersive.png" data-aos="fade-right"
-                                 data-aos-offset="300"
-                                 data-aos-easing="ease-in-sine" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <ul data-aos="fade-left"
-                            data-aos-offset="300"
-                            data-aos-easing="ease-in-sine">
-                            <li>
-                                <h4>Interact</h4>
-                                <p>with other users
-                                    in virtual world</p>
-                            </li>
-                            <li>
-                                <h4>Anytime, Anywhere</h4>
-                                <p>join the classes</p>
-                            </li>
-                            <li>
-                                <h4>Engage</h4>
-                                <p>in gamified exciting classes</p>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="card tilt anim-in" style="--d:1"><div class="card-glow"></div>
+                    <div class="card-icon ci-cyan"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" opacity=".4"/><path d="M24 12v12l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                    <h3>Outdated Methods</h3>
+                    <p>Textbooks and lectures were built for a different century. Digital-native students deserve learning that matches how they experience the world.</p>
+                </div>
+                <div class="card tilt anim-in" style="--d:2"><div class="card-glow"></div>
+                    <div class="card-icon ci-orange"><svg viewBox="0 0 48 48" fill="none"><path d="M24 6C14 6 6 14 6 24s8 18 18 18 18-8 18-18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2"/></svg></div>
+                    <h3>Invisible Concepts</h3>
+                    <p>Chemistry reactions, molecular structures, physical systems — students must imagine what they cannot see. Real comprehension suffers.</p>
+                </div>
+                <div class="card tilt anim-in" style="--d:3"><div class="card-glow"></div>
+                    <div class="card-icon ci-green"><svg viewBox="0 0 48 48" fill="none"><path d="M12 24c0-8 5-16 12-16s12 8 12 16-5 16-12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3" fill="currentColor"/></svg></div>
+                    <h3>One-Size-Fits-All</h3>
+                    <p>Every student learns differently. But most classrooms deliver one lesson at one speed. Personalization barely exists at scale.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="brands_list">
-        <div class="logo-slider">
-            <div>
-                <img loading="lazy" src="assets/img/logo1.png" alt="">
-                <img loading="lazy" src="assets/img/logo2.png" alt="">
-                <img loading="lazy" src="assets/img/logo3.png" alt="">
-                <img loading="lazy" src="assets/img/logo4.png" alt="">
-                <img loading="lazy" src="assets/img/logo5.png" alt="">
-                <img loading="lazy" src="assets/img/logo6.svg" alt="">
-            </div>
-            <div>
-                <img loading="lazy" src="assets/img/logo1.png" alt="">
-                <img loading="lazy" src="assets/img/logo2.png" alt="">
-                <img loading="lazy" src="assets/img/logo3.png" alt="">
-                <img loading="lazy" src="assets/img/logo4.png" alt="">
-                <img loading="lazy" src="assets/img/logo5.png" alt="">
-                <img loading="lazy" src="assets/img/logo6.svg" alt="">
-            </div>
-            <div>
-                <img loading="lazy" src="assets/img/logo1.png" alt="">
-                <img loading="lazy" src="assets/img/logo2.png" alt="">
-                <img loading="lazy" src="assets/img/logo3.png" alt="">
-                <img loading="lazy" src="assets/img/logo4.png" alt="">
-                <img loading="lazy" src="assets/img/logo5.png" alt="">
-                <img loading="lazy" src="assets/img/logo6.svg" alt="">
-            </div>
-        </div>
-    </section>
-    <section class="shifting_section">
+
+    <!-- ==================== SOLUTION — "WHAT IF" ==================== -->
+    <section class="section section-dark">
         <div class="container">
-            <div class="title_box">
-                <h2>shifting EDUCATION from</h2>
-                <p>boring <span>to</span> exciting</p>
+            <div class="sec-head">
+                <span class="tag anim-in">The Solution</span>
+                <h2 class="sec-title anim-in">What if students could<br><span class="grad">enter the lesson?</span></h2>
+                <p class="sec-sub anim-in">Think of it as a Roblox-like world, but for education — a multiplayer VR/AI platform where learners globally can master subjects through experience. Not gamification gimmicks — real immersive education infrastructure.</p>
             </div>
-            <div class="shifting_container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="img_box left_img" data-aos="fade-right"
-                             data-aos-offset="300"
-                             data-aos-easing="ease-in-sine">
-                            <img src="assets/img/shifting1.png" class="big_img" alt="">
-                            <img src="assets/img/frame21.svg" class="frame_img" alt="">
-                            <p>traditional learning</p>
-                        </div>
+            <div class="solution-split">
+                <div class="sol-visual anim-in">
+                    <div class="sol-3d"><canvas id="moleculeCanvas" aria-label="Interactive 3D molecule model — drag to rotate"></canvas></div>
+                    <div class="sol-label"><span class="pulse-dot"></span>Interactive 3D Molecular Visualization — Drag to rotate</div>
+                </div>
+                <div class="sol-features">
+                    <div class="sol-feat anim-in" style="--d:0">
+                        <div class="feat-num">01</div>
+                        <div><h3>Immersive VR Environments</h3><p>Students enter subject-specific virtual worlds where abstract concepts become visible, tangible, and interactive. Science isn't a diagram — it's an experience you step inside.</p></div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="img_box right_img" data-aos="fade-left"
-                             data-aos-offset="300"
-                             data-aos-easing="ease-in-sine">
-                            <img src="assets/img/shifting2.png" class="big_img" alt="">
-                            <img src="assets/img/frame22.svg" class="frame_img" alt="">
-                            <p>immersive learning</p>
-                        </div>
+                    <div class="sol-feat anim-in" style="--d:1">
+                        <div class="feat-num">02</div>
+                        <div><h3>AI-Powered Teacher</h3><p>Not a chatbot. An intelligent teaching companion that adapts to each student's pace, answers questions in real-time, and evolves toward full AI teacher avatars with voice interaction.</p></div>
+                    </div>
+                    <div class="sol-feat anim-in" style="--d:2">
+                        <div class="feat-num">03</div>
+                        <div><h3>Multiplayer Classrooms</h3><p>Up to 30 students in shared virtual environments with real-time voice. Collaboration, group experiments, teacher-led sessions — education that's social, not isolated.</p></div>
+                    </div>
+                    <div class="sol-feat anim-in" style="--d:3">
+                        <div class="feat-num">04</div>
+                        <div><h3>Education Infrastructure</h3><p>A proprietary LMS that became its own product. Manage learners, track progress, deploy across schools. Not just content — scalable systems for entire education ecosystems.</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="accessible_section">
+
+    <!-- ==================== PRODUCT ==================== -->
+    <section class="section" id="product">
+        <div class="mesh mesh-l"></div>
         <div class="container">
-            <h2 class="title_yellow">
-                Accessible by any device for your convenience
-            </h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="accessible_box">
-                        <img src="assets/img/accesible1.png" alt="">
-                        <p>pc</p>
-                    </div>
+            <div class="sec-head">
+                <span class="tag anim-in">Product</span>
+                <h2 class="sec-title anim-in">Four pillars.<br><span class="grad">One platform.</span></h2>
+            </div>
+            <div class="product-grid">
+                <div class="prod-card tilt anim-in" style="--d:0">
+                    <div class="card-glow"></div>
+                    <div class="prod-icon css-shape shape-vr"><div class="lens2"></div></div>
+                    <h3>VR Learning Worlds</h3>
+                    <p>Subject-specific virtual classrooms — from chemistry labs to physics simulations to biology explorations. Each environment is uniquely themed and curriculum-aligned. Real education through immersion.</p>
+                    <ul class="prod-list">
+                        <li>6+ themed virtual classrooms</li>
+                        <li>Interactive 3D simulations</li>
+                        <li>Works on VR, desktop & tablet</li>
+                    </ul>
                 </div>
-                <div class="col-lg-4">
-                    <div class="accessible_box">
-                        <img src="assets/img/accesible2.png" alt="">
-                        <p>vr</p>
-                    </div>
+                <div class="prod-card tilt anim-in" style="--d:1">
+                    <div class="card-glow"></div>
+                    <div class="prod-icon css-shape shape-ai"><div class="ai-core"></div><div class="ai-orbit"></div><div class="ai-dot"></div></div>
+                    <h3>AI Teacher</h3>
+                    <p>An intelligent educational guide that personalizes lessons, answers questions contextually, and adapts to each student's speed. Building toward AI teacher avatars and digital twin teaching.</p>
+                    <ul class="prod-list">
+                        <li>Real-time voice interaction</li>
+                        <li>Adaptive pacing</li>
+                        <li>Teacher assistance tools</li>
+                    </ul>
                 </div>
-                <div class="col-lg-4">
-                    <div class="accessible_box">
-                        <img src="assets/img/accesible3.png" alt="">
-                        <p>mobile</p>
+                <div class="prod-card tilt anim-in" style="--d:2">
+                    <div class="card-glow"></div>
+                    <div class="prod-icon css-shape shape-multi"><div class="mp-center"></div><div class="mp-node mp-n1"></div><div class="mp-node mp-n2"></div><div class="mp-node mp-n3"></div><div class="mp-node mp-n4"></div><div class="mp-node mp-n5"></div><div class="mp-line ml1"></div><div class="mp-line ml2"></div><div class="mp-line ml3"></div><div class="mp-line ml4"></div><div class="mp-line ml5"></div></div>
+                    <h3>Multiplayer</h3>
+                    <p>30 students in shared virtual classrooms with real-time voice communication. Collaborative experiments, teacher-led group sessions, and AI-supported class management.</p>
+                    <ul class="prod-list">
+                        <li>30-student capacity</li>
+                        <li>Live voice chat</li>
+                        <li>Collaborative experiments</li>
+                    </ul>
+                </div>
+                <div class="prod-card tilt anim-in" style="--d:3">
+                    <div class="card-glow"></div>
+                    <div class="prod-icon css-shape shape-lms"><div class="lms-bars"><div class="lms-b lb1"></div><div class="lms-b lb2"></div><div class="lms-b lb3"></div><div class="lms-b lb4"></div><div class="lms-b lb5"></div></div><div class="lms-line"></div></div>
+                    <h3>LMS Platform</h3>
+                    <p>Proprietary learning management system that grew from internal tool to standalone product. Complete education infrastructure that institutions adopt to run and scale their operations.</p>
+                    <ul class="prod-list">
+                        <li>Institutional deployment</li>
+                        <li>Progress analytics</li>
+                        <li>Multi-school management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">How It Works</span>
+                <h2 class="sec-title anim-in">From classroom to<br><span class="grad">virtual world.</span></h2>
+            </div>
+            <div class="steps">
+                <div class="step anim-in" style="--d:0"><div class="step-n"><span>1</span></div><div class="step-c"><h3>Curriculum Aligned</h3><p>Every VR experience maps to real educational standards and learning objectives. Not random content — structured education.</p></div></div>
+                <div class="step anim-in" style="--d:1"><div class="step-n"><span>2</span></div><div class="step-c"><h3>Enter the Experience</h3><p>Students put on a VR headset or access through a digital interface and step into an interactive 3D world built for the topic.</p></div></div>
+                <div class="step anim-in" style="--d:2"><div class="step-n"><span>3</span></div><div class="step-c"><h3>AI Guides the Journey</h3><p>The AI teaching companion explains, adapts, answers questions, and ensures deep understanding at each student's pace.</p></div></div>
+                <div class="step anim-in" style="--d:3"><div class="step-n"><span>4</span></div><div class="step-c"><h3>Learn by Doing</h3><p>Run experiments, observe molecular reactions, manipulate structures. Understanding comes from experience, not memorization.</p></div></div>
+                <div class="step anim-in" style="--d:4"><div class="step-n"><span>5</span></div><div class="step-c"><h3>Track & Scale</h3><p>The LMS handles deployment, progress tracking, and institutional management. From one classroom to an entire national education system.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOLUTIONS ==================== -->
+    <section class="section" id="solutions">
+        <div class="mesh mesh-r"></div>
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">Solutions</span>
+                <h2 class="sec-title anim-in">Built for every stakeholder<br><span class="grad">in education.</span></h2>
+            </div>
+            <div class="grid-4">
+                <div class="card tilt anim-in" style="--d:0"><div class="card-glow"></div>
+                    <div class="card-icon ci-purple"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4l16 8v10c0 10-6.5 17.3-16 20C14.5 39.3 8 32 8 22V12L24 4z" stroke="currentColor" stroke-width="2"/><path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3>For Students</h3>
+                    <p>Learn by experiencing, not memorizing. Complex subjects become understandable when you can see, touch, and explore them inside immersive worlds.</p>
+                </div>
+                <div class="card tilt anim-in" style="--d:1"><div class="card-glow"></div>
+                    <div class="card-icon ci-cyan"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                    <h3>For Educators</h3>
+                    <p>AI tools that save time, improve personalization, and bring real innovation into every session. Support teachers — don't replace them.</p>
+                </div>
+                <div class="card tilt anim-in" style="--d:2"><div class="card-glow"></div>
+                    <div class="card-icon ci-orange"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="8" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36" stroke="currentColor" stroke-width="2"/></svg></div>
+                    <h3>For Schools</h3>
+                    <p>Modernize with scalable digital learning. Differentiate your institution, improve engagement, and deploy next-generation education tools system-wide.</p>
+                </div>
+                <div class="card tilt anim-in" style="--d:3"><div class="card-glow"></div>
+                    <div class="card-icon ci-green"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L4 16l20 12 20-12L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 28l20 12 20-12" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity=".5"/></svg></div>
+                    <h3>For Governments</h3>
+                    <p>Deploy immersive AI-powered learning across public education systems. National-scale infrastructure for the future of an entire country's education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IMPACT ==================== -->
+    <!-- <section class="section section-dark" id="impact">
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">Traction</span>
+                <h2 class="sec-title anim-in">Real company.<br><span class="grad">Real validation.</span></h2>
+                <p class="sec-sub anim-in">Metatesk is not a concept. It's a revenue-generating company with institutional contracts, net dollar retention above 120%, and active B2B/B2G deployment across markets including China and Azerbaijan.</p>
+            </div>
+            <div class="impact-row">
+                <div class="imp-card tilt anim-in" style="--d:0"><div class="imp-val"><span class="counter" data-count="120">0</span>%</div><div class="imp-lab">Net Dollar Retention</div></div>
+                <div class="imp-card tilt anim-in" style="--d:1"><div class="imp-val">B2B + B2G</div><div class="imp-lab">Revenue Channels</div></div>
+                <div class="imp-card tilt anim-in" style="--d:2"><div class="imp-val"><span class="counter" data-count="6">0</span>+</div><div class="imp-lab">Subject Environments</div></div>
+                <div class="imp-card tilt anim-in" style="--d:3"><div class="imp-val">$2.5M</div><div class="imp-lab">Raising to Scale</div></div>
+            </div>
+        </div>
+        <div class="impact-globe"><canvas id="globeCanvas" aria-label="Animated wireframe globe"></canvas></div>
+    </section> -->
+
+    <!-- ==================== VIRTUAL CLASSROOMS ==================== -->
+    <section class="section">
+        <div class="mesh mesh-r"></div>
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">Virtual Classrooms</span>
+                <h2 class="sec-title anim-in">Every subject gets<br><span class="grad">its own world.</span></h2>
+                <p class="sec-sub anim-in">Each subject has a uniquely themed 3D environment — designed to match the topic, engage the senses, and make learning feel natural. Not one generic room — a universe of classrooms.</p>
+            </div>
+            <div class="rooms-grid">
+                <div class="room-card tilt anim-in" style="--d:0;--accent:#482AFF;--accent-bg:rgba(72,42,255,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview"><div class="room-shapes room-math"><span class="sym s1">&pi;</span><span class="sym s2">&Sigma;</span><span class="sym s3">&infin;</span><span class="sym s4">&Delta;</span></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#482AFF"></span><h4>Mathematics</h4></div>
+                    <p>Number lines, geometric shapes, spatial reasoning — abstract math becomes visual and interactive.</p>
+                </div>
+                <div class="room-card tilt anim-in" style="--d:1;--accent:#F97316;--accent-bg:rgba(249,115,22,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview"><div class="room-shapes room-physics"><div class="nucleus"></div><div class="el-orbit eo1"><div class="el-dot"></div></div><div class="el-orbit eo2"></div><div class="el-orbit eo3"><div class="el-dot"></div></div></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#F97316"></span><h4>Physics Lab</h4></div>
+                    <p>Pendulums, wave patterns, force simulations — see physics happen instead of just reading formulas.</p>
+                </div>
+                <div class="room-card tilt anim-in" style="--d:2;--accent:#88CE53;--accent-bg:rgba(136,206,83,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview"><div class="room-shapes room-chem"><div class="beaker"><div class="liquid"></div><div class="bubble bu1"></div><div class="bubble bu2"></div><div class="bubble bu3"></div></div></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#88CE53"></span><h4>Chemistry Lab</h4></div>
+                    <p>Virtual beakers, molecule models, reactions at molecular level — safe experimentation without limits.</p>
+                </div>
+                <div class="room-card tilt anim-in" style="--d:3;--accent:#22C55E;--accent-bg:rgba(34,197,94,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview"><div class="room-shapes room-bio"><div class="dna"><div class="dna-node dn1"></div><div class="dna-node dn2"></div><div class="dna-node dn3"></div><div class="dna-node dn4"></div><div class="dna-node dn5"></div><div class="dna-node dn6"></div><div class="dna-node dn7"></div><div class="dna-node dn8"></div><div class="dna-bar db1"></div><div class="dna-bar db2"></div><div class="dna-bar db3"></div><div class="dna-bar db4"></div></div></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#22C55E"></span><h4>Biology</h4></div>
+                    <p>DNA helixes, cell structures, ecosystems — explore life sciences at every scale from micro to macro.</p>
+                </div>
+                <div class="room-card tilt anim-in" style="--d:4;--accent:#55CBF9;--accent-bg:rgba(85,203,249,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview room-preview-dark"><div class="room-shapes room-code"><div class="terminal"><div class="code-line cl1"></div><div class="code-line cl2"></div><div class="code-line cl3"></div><div class="code-line cl4"></div><div class="code-line cl5"></div><div class="cursor-blink"></div></div></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#55CBF9"></span><h4>Programming</h4></div>
+                    <p>Floating code screens, logic visualizations, server simulations — learn to code inside the machine.</p>
+                </div>
+                <div class="room-card tilt anim-in" style="--d:5;--accent:#FBB116;--accent-bg:rgba(251,177,22,.08)">
+                    <div class="card-glow"></div>
+                    <div class="room-preview"><div class="room-shapes room-lang"><div class="globe-ring gr1"></div><div class="globe-ring gr2"></div><div class="globe-ring gr3"></div><span class="lang-char lc1">A</span><span class="lang-char lc2">&#x4F60;</span><span class="lang-char lc3">&#x3B1;</span></div></div>
+                    <div class="room-info"><span class="room-dot" style="background:#FBB116"></span><h4>Languages</h4></div>
+                    <p>Cultural immersion, conversation practice, world exploration — learn languages by living them virtually.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PLATFORM BADGES ==================== -->
+    <section class="section section-dark" id="platform">
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">Works Everywhere</span>
+                <h2 class="sec-title anim-in">One platform.<br><span class="grad">Every device.</span></h2>
+                <p class="sec-sub anim-in">VR headsets deliver the deepest immersion — but Metatesk works on any screen. No hardware barrier to getting started.</p>
+            </div>
+            <div class="platforms-row anim-in">
+                <div class="plat-card">
+                    <div class="plat-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M2 14a4 4 0 014-4h36a4 4 0 014 4v16a4 4 0 01-4 4H6a4 4 0 01-4-4V14z" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="22" r="5" stroke="currentColor" stroke-width="2"/><circle cx="31" cy="22" r="5" stroke="currentColor" stroke-width="2"/><path d="M22 22h4" stroke="currentColor" stroke-width="2"/></svg></div>
+                    <h4>VR Headset</h4>
+                    <p>Full immersion</p>
+                </div>
+                <div class="plat-card">
+                    <div class="plat-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="4" y="6" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 34h40M18 34v4M30 34v4M14 38h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                    <h4>Desktop</h4>
+                    <p>3D interactive</p>
+                </div>
+                <div class="plat-card">
+                    <div class="plat-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="4" width="32" height="40" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 10h32M8 36h32" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="40" r="1.5" fill="currentColor"/></svg></div>
+                    <h4>Tablet</h4>
+                    <p>Touch-friendly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AI TEACHER PERSONAS ==================== -->
+    <section class="section">
+        <div class="mesh mesh-l"></div>
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">AI Teachers</span>
+                <h2 class="sec-title anim-in">Not one teacher.<br><span class="grad">Four personalities.</span></h2>
+                <p class="sec-sub anim-in">Every student learns differently. That's why Metatesk doesn't have one AI — it has four distinct teaching personas, each with a unique style. Students pick the teacher that fits how they think.</p>
+            </div>
+            <div class="personas-grid">
+                <div class="persona-card tilt anim-in" style="--d:0">
+                    <div class="card-glow"></div>
+                    <div class="persona-avatar pa-purple"><span>A</span><div class="persona-ring"></div></div>
+                    <h3>Professor Ada</h3>
+                    <span class="persona-style">Patient Guide</span>
+                    <p>Step-by-step explanations with comprehension checks. Never rushes. Builds understanding layer by layer until it clicks.</p>
+                </div>
+                <div class="persona-card tilt anim-in" style="--d:1">
+                    <div class="card-glow"></div>
+                    <div class="persona-avatar pa-orange"><span>F</span><div class="persona-ring"></div></div>
+                    <h3>Dr. Felix</h3>
+                    <span class="persona-style">Energetic Motivator</span>
+                    <p>Real-world examples, analogies, high energy. Makes connections between subjects and life. Turns dry topics into exciting discoveries.</p>
+                </div>
+                <div class="persona-card tilt anim-in" style="--d:2">
+                    <div class="card-glow"></div>
+                    <div class="persona-avatar pa-cyan"><span>M</span><div class="persona-ring"></div></div>
+                    <h3>Professor Maia</h3>
+                    <span class="persona-style">Thought Provoker</span>
+                    <p>Socratic method — asks strategic questions instead of giving answers directly. Builds critical thinking and deep reasoning skills.</p>
+                </div>
+                <div class="persona-card tilt anim-in" style="--d:3">
+                    <div class="card-glow"></div>
+                    <div class="persona-avatar pa-green"><span>R</span><div class="persona-ring"></div></div>
+                    <h3>Dr. Rex</h3>
+                    <span class="persona-style">Efficient Expert</span>
+                    <p>Concise, direct, no fluff. Maximizes knowledge density per minute. Perfect for advanced students who want speed and depth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3D CLASSROOM PREVIEW ==================== -->
+    <section class="section section-alt" id="preview">
+        <div class="container">
+            <div class="sec-head">
+                <span class="tag anim-in">See It In Action</span>
+                <h2 class="sec-title anim-in">A classroom you can<br><span class="grad">step inside.</span></h2>
+                <p class="sec-sub anim-in">This is what a Metatesk learning environment looks like from the inside. Interactive 3D. AI-guided. Built for understanding.</p>
+            </div>
+            <div class="classroom-preview anim-in">
+                <canvas id="classroomCanvas" aria-label="Interactive 3D virtual classroom preview — drag to look around"></canvas>
+                <div class="classroom-hud">
+                    <div class="hud-left">
+                        <div class="hud-tag">LIVE 3D CLASSROOM</div>
+                        <div class="hud-sub">AI Teacher Active &middot; 6 Students Connected</div>
+                    </div>
+                    <div class="hud-right">
+                        <div class="hud-pill"><span class="hud-dot"></span>Interactive</div>
+                        <div class="hud-hint">Drag to look around</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="learn_section">
-        <h2>
-            Learn scientific concepts in immersive way
-            while virtually flying in space or exploring the ocean!
-        </h2>
+
+    <!-- ==================== FOUNDER ==================== -->
+    <section class="section section-alt" id="founder">
         <div class="container">
-            <div class="learn_box">
-                <img src="assets/img/learn1.svg" class="slide_img" alt="">
-                <img src="assets/img/learn2.svg" class="slide_img" alt="">
+            <div class="sec-head">
+                <span class="tag anim-in">Behind Metatesk</span>
+                <h2 class="sec-title anim-in">Built by people who believe<br><span class="grad">education should feel alive.</span></h2>
+                <p class="sec-sub anim-in">Metatesk started from a real frustration: watching science education remain passive and outdated while the world became interactive and digital. The question was simple — <strong>what if students could enter the lesson instead of just watching it?</strong> Early VR prototypes showed children responding with genuine excitement. That spark became a company.</p>
+            </div>
+            <div class="awards-grid anim-in">
+                <div class="award-card"><div class="award-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l4 8 9 1.3-6.5 6.3L24 27 16 22.5 8 27l1.5-9.4L3 11.3 12 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div><h4>Forbes 30 Under 30</h4><p>Europe</p></div>
+                <div class="award-card"><div class="award-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l10 5v8c0 7-4 12-10 14-6-2-10-7-10-14V9L16 4z" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div><h4>Presidential Youth Award</h4><p>Innovation & Entrepreneurship</p></div>
+                <div class="award-card"><div class="award-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div><h4>Tech Entrepreneur of the Year</h4><p>IDDA Awards</p></div>
+                <div class="award-card"><div class="award-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><path d="M6 24h20M10 24V14l6-8 6 8v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div><h4>2x Teknofest Winner</h4><p>Technology Competition</p></div>
             </div>
         </div>
     </section>
-    <!-- <section class="section_available">
+
+    <!-- ==================== PARTNERS ==================== -->
+    <!-- <section class="section" id="partners">
         <div class="container">
-            <h2>
-                Available on
-            </h2>
-            <div class="img_list">
-                <ul>
-                    <li>
-                        <img src="assets/img/roblox.png" alt="">
-                    </li>
-                    <li>
-                        <img src="assets/img/meta.png" alt="">
-                    </li>
-                    <li>
-                        <img src="assets/img/core.png" alt="">
-                    </li>
-                </ul>
+            <div class="sec-head">
+                <span class="tag anim-in">Ecosystem</span>
+                <h2 class="sec-title anim-in">Trusted by leaders.<br><span class="grad">Backed by innovators.</span></h2>
+            </div>
+            <div class="partners-grid anim-in">
+                <div class="partner"><div class="partner-name">ABB</div><div class="partner-desc">Azerbaijan's largest bank — official VR/AR partnership</div></div>
+                <div class="partner"><div class="partner-name">RC Challenge</div><div class="partner-desc">World's largest student STEM robotics competition — official local partner</div></div>
+                <div class="partner"><div class="partner-name">EBRD</div><div class="partner-desc">European Bank for Reconstruction and Development — Star Venture engagement</div></div>
+                <div class="partner"><div class="partner-name">Google for Startups</div><div class="partner-desc">Silkway Accelerator — selected program participant</div></div>
+                <div class="partner"><div class="partner-name">Draper University</div><div class="partner-desc">Hero Training program by Tim Draper & Astana Hub</div></div>
+                <div class="partner"><div class="partner-name">IDDA</div><div class="partner-desc">Innovation and Digital Development Agency of Azerbaijan</div></div>
             </div>
         </div>
     </section> -->
-    <footer>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section section-alt">
         <div class="container">
-            <div class="footer_box">
-                <img src="assets/img/logo_footer.svg" alt="">
-                <p>
-                    Exciting Entertaining Engaging
-                </p>
-                <p>
-                    © 2026 Metatesk LLC. All Rights Reserved
-                </p>
+            <div class="sec-head">
+                <span class="tag anim-in">FAQ</span>
+                <h2 class="sec-title anim-in">Frequently asked<br><span class="grad">questions.</span></h2>
             </div>
-            <div class="footer_social">
-                <a href="#"><img src="assets/img/fb.svg" alt=""></a>
-                <a href="#"><img src="assets/img/linkedin.svg" alt=""></a>
+            <div class="faq-list">
+                <div class="faq anim-in" style="--d:0"><button class="faq-q"><span>What makes Metatesk different from other edtech?</span><svg class="faq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Metatesk is not just content delivery. It combines immersive VR environments, AI teaching support, multiplayer interaction, and institutional-grade LMS infrastructure in one platform. Students don't watch — they step inside.</p></div></div>
+                <div class="faq anim-in" style="--d:1"><button class="faq-q"><span>Do students need VR headsets?</span><svg class="faq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>VR headsets provide the most immersive experience, but Metatesk also works through digital interfaces on computers and tablets — flexible for any institution's setup.</p></div></div>
+                <div class="faq anim-in" style="--d:2"><button class="faq-q"><span>How does the AI teacher work?</span><svg class="faq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Our AI companion adapts to each student's pace, explains concepts in real-time within the VR environment, and provides personalized guidance. The long-term vision includes AI teacher avatars with voice-in/voice-out interaction.</p></div></div>
+                <div class="faq anim-in" style="--d:3"><button class="faq-q"><span>Can this deploy at national scale?</span><svg class="faq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Yes. The proprietary LMS and infrastructure are built specifically for institutional and government-level deployment. We actively work with B2G partners for public education systems.</p></div></div>
+                <div class="faq anim-in" style="--d:4"><button class="faq-q"><span>What subjects are available?</span><svg class="faq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Metatesk covers Mathematics, Physics, Chemistry, Biology, Programming, and Languages — each with a uniquely themed virtual classroom. Curriculum-aligned content is continuously expanding across subjects and levels.</p></div></div>
             </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISION ==================== -->
+    <section class="section section-vision">
+        <div class="vision-stars"></div>
+        <div class="container">
+            <div class="vision-inner anim-in">
+                <span class="tag" data-i18n="vision.tag">Our Vision</span>
+                <blockquote class="vision-q" data-i18n="vision.quote">A world where every learner can <em>step inside</em> education — guided by intelligent systems, supported by immersive environments, and empowered to learn in ways that match the future.</blockquote>
+                <div class="vision-pills">
+                    <span class="pill" data-i18n="vision.p1">Immersive</span>
+                    <span class="pill" data-i18n="vision.p2">Intelligent</span>
+                    <span class="pill" data-i18n="vision.p3">Personalized</span>
+                    <span class="pill" data-i18n="vision.p4">Global</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+        <div class="mesh mesh-l"></div>
+        <div class="container">
+            <div class="contact-split">
+                <div class="contact-info anim-in">
+                    <span class="tag">Get Started</span>
+                    <h2 class="sec-title">Ready to transform<br><span class="grad">education?</span></h2>
+                    <p class="sec-sub">Whether you're a school, government, partner, or investor — let's explore what Metatesk can do for your mission.</p>
+                </div>
+                <div class="contact-form-wrap anim-in">
+                    <form class="cform" id="contactForm">
+                        <div class="fg"><input type="text" placeholder="Your name" required></div>
+                        <div class="fg"><input type="email" placeholder="Email address" required></div>
+                        <div class="fg"><select required><option value="" disabled selected>I am a...</option><option>School / Education Center</option><option>Government / Public Sector</option><option>Educator</option><option>Partner</option><option>Investor</option><option>Other</option></select></div>
+                        <div class="fg"><textarea placeholder="Tell us about your needs..." rows="4"></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full magnetic"><span class="btn-text">Send Message</span><span class="btn-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="btn-shimmer"></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand"><img src="assets/logo.png" alt="Metatesk" class="footer-logo"><p>Building immersive VR learning worlds guided by AI teachers.</p></div>
+                <div class="footer-cols">
+                    <div class="fcol"><h4 data-i18n="ft.product">Product</h4><a href="#product" data-i18n="ft.vr">VR Labs</a><a href="#product" data-i18n="ft.ai">AI Teacher</a><a href="#product" data-i18n="ft.lms">LMS</a><a href="#product" data-i18n="ft.multi">Multiplayer</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.solutions">Solutions</h4><a href="#solutions" data-i18n="ft.students">Students</a><a href="#solutions" data-i18n="ft.educators">Educators</a><a href="#solutions" data-i18n="ft.schools">Schools</a><a href="#solutions" data-i18n="ft.govs">Governments</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.company">Company</h4><a href="#about" data-i18n="ft.about">About</a><a href="#founder" data-i18n="ft.team">Team</a><a href="#partners" data-i18n="ft.partners">Partners</a><a href="#contact" data-i18n="ft.contact">Contact</a></div>
+                </div>
+            </div>
+            <div class="footer-bot"><p>&copy; 2026 Metatesk. All rights reserved.</p></div>
         </div>
     </footer>
-</main>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header show_mobile">
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal_content">
-                    <h3>Get a FREE demo class for your child</h3>
-                    <form action="">
-                        <div class="form_top">
-                            <div class="input_box">
-                                <input type="text" placeholder="Name & Surname ">
-                            </div>
-                            <div class="input_box">
-                                <input type="email" placeholder="Email addres">
-                            </div>
-                        </div>
-                        <div class="form_bottom">
-                            <button class="btn-custom btn-yellow">Login</button>
-                        </div>
-                        <div class="modal_bottom">
-                            <p>Not on Metatesk yet?
-                                <a href="#" data-bs-dismiss="modal" type="button" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal2">
-                                    Join
-                                </a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header show_mobile">
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal_content">
-                    <h3>Get a FREE demo class for your child</h3>
-                    <form action="">
-                        <div class="form_top">
-                            <div class="date_select">
-                                <select name="" id="">
-                                    <option value="">Month</option>
-                                </select>
-                                <select name="" id="">
-                                    <option value="">Day</option>
-                                </select>
-                                <select name="" id="">
-                                    <option value="">Year</option>
-                                </select>
-                            </div>
-                            <div class="input_box">
-                                <input type="text" placeholder="Name & Surname ">
-                            </div>
-                            <div class="input_box">
-                                <select name="" id="">
-                                    <option value="">Country</option>
-                                </select>
-                            </div>
-                            <div class="input_box">
-                                <input type="email" placeholder="Email addres">
-                            </div>
-
-                        </div>
-                        <div class="form_bottom">
-                            <button class="btn-custom btn-blue">Join</button>
-                        </div>
-                        <div class="modal_bottom">
-                            <p>Not on Metatesk yet?
-                                <a href="#" data-bs-dismiss="modal" type="button" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal">
-                                    Login
-                                </a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-<script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
