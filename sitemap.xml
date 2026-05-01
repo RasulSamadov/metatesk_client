@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Home — EN -->
     <url>
         <loc>https://metatesk.com/</loc>
-        <lastmod>2026-03-25</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/"/>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Metatesk Logo — VR AI Education Platform by Gunay Imanzade</image:title>
+            <image:caption>Metatesk — immersive VR learning worlds guided by AI teachers, founded by Gunay Imanzade (Forbes 30 Under 30 Europe)</image:caption>
+        </image:image>
     </url>
+
+    <!-- Home — AZ -->
+    <url>
+        <loc>https://metatesk.com/?lang=az</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Metatesk Loqosu — Günay İmanzadə tərəfindən qurulan VR AI Təhsil Platformu</image:title>
+            <image:caption>Metatesk — süni intellekt müəllimləri ilə idarə olunan immersiv VR öyrənmə dünyaları, Günay İmanzadə tərəfindən qurulmuşdur</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Gunay Imanzade profile page -->
+    <url>
+        <loc>https://metatesk.com/gunay-imanzade</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/gunay-imanzade"/>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/gunay-imanzade?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/gunay-imanzade"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/gunay-portrait.png</image:loc>
+            <image:title>Gunay Imanzade — Founder &amp; CEO of Metatesk, Forbes 30 Under 30 Europe</image:title>
+            <image:caption>Gunay Imanzade, Founder and CEO of Metatesk — immersive VR and AI education platform from Baku, Azerbaijan</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Metatesk — founded by Gunay Imanzade</image:title>
+            <image:caption>Metatesk logo — VR and AI education platform</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Product page -->
+    <url>
+        <loc>https://metatesk.com/product</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/product"/>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/product?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/product"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Metatesk Platform — VR Learning Worlds, AI Teacher, Multiplayer &amp; LMS by Gunay Imanzade</image:title>
+            <image:caption>Metatesk platform: VR Learning Worlds, AI Teacher with 4 personas, Multiplayer Classrooms, and national-scale LMS</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Solutions page -->
+    <url>
+        <loc>https://metatesk.com/solutions</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/solutions"/>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/solutions?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/solutions"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Metatesk Solutions — VR and AI Education for Schools, Governments and Educators by Gunay Imanzade</image:title>
+            <image:caption>Metatesk education solutions for students, educators, schools, and governments — founded by Gunay Imanzade</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Contact / Get a Demo page -->
+    <url>
+        <loc>https://metatesk.com/contact</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://metatesk.com/contact"/>
+        <xhtml:link rel="alternate" hreflang="az" href="https://metatesk.com/contact?lang=az"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://metatesk.com/contact"/>
+        <image:image>
+            <image:loc>https://metatesk.com/assets/logo.png</image:loc>
+            <image:title>Contact Metatesk — Get a Demo of VR and AI Education Platform by Gunay Imanzade</image:title>
+            <image:caption>Request a live Metatesk demo — serving schools, governments, educators, partners, and investors</image:caption>
+        </image:image>
+    </url>
+
 </urlset>

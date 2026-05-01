@@ -1,57 +1,585 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metatesk — Step Inside Education</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Metatesk builds immersive VR learning worlds guided by AI teachers. Students experience knowledge through interactive 3D environments instead of just memorizing it.">
-    <meta name="keywords" content="Metatesk, VR education, AI teacher, immersive learning, virtual reality, edtech, multiplayer classroom, LMS, interactive education">
-    <meta name="author" content="Metatesk">
-    <meta name="robots" content="index, follow">
+    <!-- SEO Core -->
+    <meta name="description" content="Metatesk, founded by Gunay Imanzade, builds immersive VR learning worlds guided by AI teachers. Forbes 30 Under 30 Europe. Students experience knowledge through interactive 3D environments — not just memorize it.">
+    <meta name="keywords" content="Metatesk, Gunay Imanzade, VR education, AI teacher, immersive learning, virtual reality, edtech, multiplayer classroom, LMS, interactive education, Metatask, Metatek, Metatesq, Meta Tesk, metatesk.com, Azerbaijan edtech, VR classroom, AI learning">
+    <meta name="author" content="Gunay Imanzade, Metatesk">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://metatesk.com">
+
+    <!-- Brand & identity signals -->
+    <meta name="application-name" content="Metatesk">
+    <meta name="copyright" content="Metatesk">
+    <meta name="subject" content="Immersive VR and AI Education Platform">
+    <meta name="classification" content="Education, EdTech, Virtual Reality, Artificial Intelligence">
+    <meta name="coverage" content="Worldwide">
+    <meta name="language" content="English">
+    <meta name="category" content="Education Technology">
+    <meta itemprop="name" content="Metatesk — Step Inside Education | Gunay Imanzade">
+    <meta itemprop="description" content="Metatesk, founded by Gunay Imanzade, builds immersive VR learning worlds guided by AI teachers.">
+    <meta itemprop="image" content="https://metatesk.com/assets/logo.png">
+
+    <!-- Hreflang for bilingual EN/AZ -->
+    <link rel="alternate" hreflang="en" href="https://metatesk.com/">
+    <link rel="alternate" hreflang="az" href="https://metatesk.com/?lang=az">
+    <link rel="alternate" hreflang="x-default" href="https://metatesk.com/">
+
+    <!-- Author / founder attribution -->
+    <link rel="author" href="https://metatesk.com/#founder">
+    <link rel="me" href="https://www.linkedin.com/in/imgunay/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://metatesk.com">
-    <meta property="og:title" content="Metatesk — Step Inside Education">
-    <meta property="og:description" content="Immersive VR learning worlds guided by AI teachers. Where students experience knowledge instead of just memorizing it.">
+    <meta property="og:title" content="Metatesk — Step Inside Education | Gunay Imanzade">
+    <meta property="og:description" content="Founded by Gunay Imanzade (Forbes 30 Under 30 Europe). Metatesk builds immersive VR learning worlds guided by AI teachers. Students experience knowledge — not just memorize it.">
     <meta property="og:image" content="https://metatesk.com/assets/logo.png">
+    <meta property="og:image:alt" content="Metatesk — VR AI Education Platform by Gunay Imanzade">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:site_name" content="Metatesk">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="az_AZ">
+    <meta property="article:author" content="https://www.linkedin.com/in/imgunay/">
+    <meta property="article:publisher" content="https://www.linkedin.com/company/metatesk">
+    <meta property="article:published_time" content="2026-01-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-01T00:00:00+00:00">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Metatesk — Step Inside Education">
-    <meta name="twitter:description" content="Immersive VR learning worlds guided by AI teachers.">
+    <meta name="twitter:title" content="Metatesk — Step Inside Education | Gunay Imanzade">
+    <meta name="twitter:description" content="Founded by Gunay Imanzade — Forbes 30 Under 30 Europe. Immersive VR learning worlds guided by AI teachers. Step inside education.">
     <meta name="twitter:image" content="https://metatesk.com/assets/logo.png">
+    <meta name="twitter:image:alt" content="Metatesk Logo — VR AI Education Platform">
 
     <!-- Theme -->
     <meta name="theme-color" content="#482AFF" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0D0820" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
     <meta name="msapplication-TileColor" content="#482AFF">
+    <meta name="msapplication-TileImage" content="https://metatesk.com/assets/logo.png">
+
+    <!-- Geographic signals -->
+    <meta name="geo.region" content="AZ">
+    <meta name="geo.placename" content="Baku, Azerbaijan">
+    <meta name="geo.position" content="40.4093;49.8671">
+    <meta name="ICBM" content="40.4093, 49.8671">
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/logo.png">
 
-    <!-- Structured Data -->
+    <!-- Structured Data: Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://metatesk.com/#organization",
         "name": "Metatesk",
-        "description": "Immersive VR learning worlds guided by AI teachers",
+        "legalName": "Metatesk",
+        "alternateName": ["Metatesk EdTech", "Metatask", "Metatek", "Meta Tesk", "Metatesq", "Metatesk Education", "Metatesk VR"],
+        "slogan": "Step Inside Education",
+        "description": "Metatesk, founded by Gunay Imanzade, builds immersive VR learning worlds guided by AI teachers. An edtech platform combining virtual reality and artificial intelligence to make education interactive and experiential for students and institutions worldwide.",
         "url": "https://metatesk.com",
-        "logo": "assets/logo.png",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://metatesk.com/assets/logo.png",
+            "width": 512,
+            "height": 512
+        },
+        "image": "https://metatesk.com/assets/logo.png",
         "foundingDate": "2021",
-        "sameAs": [],
-        "knowsAbout": ["Virtual Reality Education", "AI Teaching", "Immersive Learning", "EdTech"]
+        "foundingLocation": {
+            "@type": "Place",
+            "name": "Baku, Azerbaijan"
+        },
+        "founder": {
+            "@type": "Person",
+            "@id": "https://metatesk.com/#gunay-imanzade",
+            "name": "Gunay Imanzade",
+            "givenName": "Gunay",
+            "familyName": "Imanzade",
+            "jobTitle": "Founder & CEO",
+            "sameAs": [
+                "https://www.linkedin.com/in/imgunay/"
+            ]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Baku",
+            "addressCountry": "AZ",
+            "addressRegion": "Baku"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "url": "https://metatesk.com/#contact",
+            "availableLanguage": ["English", "Azerbaijani"]
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/metatesk",
+            "https://www.f6s.com/company/metatesk"
+        ],
+        "knowsAbout": [
+            "Virtual Reality Education",
+            "AI Teaching",
+            "Immersive Learning",
+            "EdTech",
+            "Metaverse Classroom",
+            "Multiplayer Learning",
+            "Learning Management System",
+            "VR Classroom",
+            "Educational Technology",
+            "Artificial Intelligence in Education",
+            "B2G Education Deployment"
+        ],
+        "award": [
+            "Forbes 30 Under 30 Europe",
+            "Presidential Youth Award for Innovation and Entrepreneurship",
+            "Tech Entrepreneur of the Year (IDDA Awards)",
+            "2x Teknofest Winner",
+            "Google for Startups Silkway Accelerator",
+            "EBRD Star Venture"
+        ]
     }
+    </script>
+
+    <!-- Structured Data: WebSite (sitelinks search box + brand signal) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://metatesk.com/#website",
+        "name": "Metatesk",
+        "alternateName": ["Metatesk — Step Inside Education", "Metatesk EdTech", "Metatask", "Metatek"],
+        "url": "https://metatesk.com",
+        "description": "Metatesk — immersive VR learning worlds guided by AI teachers. Founded by Gunay Imanzade. Forbes 30 Under 30 Europe.",
+        "inLanguage": ["en", "az"],
+        "publisher": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://metatesk.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: Person — Gunay Imanzade (rich standalone entity) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://metatesk.com/#gunay-imanzade",
+        "name": "Gunay Imanzade",
+        "givenName": "Gunay",
+        "familyName": "Imanzade",
+        "alternateName": ["Günay İmanzadə", "Gunay Imanzadeh", "Gunai Imanzade", "Gunay Emandzade"],
+        "jobTitle": "Founder & CEO",
+        "description": "Gunay Imanzade is the founder and CEO of Metatesk, the Azerbaijan-based edtech company building immersive VR and AI-powered learning environments for schools, governments, and learners worldwide. A Forbes 30 Under 30 Europe honoree, recipient of the Presidential Youth Award for Innovation and Entrepreneurship, named Tech Entrepreneur of the Year by Azerbaijan's Innovation and Digital Development Agency (IDDA), and 2x Teknofest winner. Gunay Imanzade leads Metatesk's mission to transform education by making it an immersive experience students step inside — not just something they watch.",
+        "worksFor": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization",
+            "name": "Metatesk",
+            "url": "https://metatesk.com"
+        },
+        "affiliation": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization"
+        },
+        "url": "https://metatesk.com/#founder",
+        "nationality": {
+            "@type": "Country",
+            "name": "Azerbaijan"
+        },
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Baku, Azerbaijan"
+        },
+        "knowsAbout": [
+            "Virtual Reality Education",
+            "Artificial Intelligence",
+            "EdTech Entrepreneurship",
+            "Education Technology",
+            "VR Learning Environments",
+            "Startup Founding",
+            "B2G Sales",
+            "Immersive Learning",
+            "AI Teacher Systems",
+            "Learning Management Systems"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Chief Executive Officer",
+            "description": "Founder and CEO of Metatesk, leading strategy, product, and business development for an immersive VR and AI education platform.",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "Azerbaijan"
+            },
+            "skills": "Virtual Reality, Artificial Intelligence, EdTech, Business Development, Entrepreneurship, B2G Sales"
+        },
+        "award": [
+            "Forbes 30 Under 30 Europe",
+            "Presidential Youth Award for Innovation and Entrepreneurship",
+            "Tech Entrepreneur of the Year (IDDA Awards)",
+            "2x Teknofest Winner"
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/imgunay/",
+            "https://www.f6s.com/company/metatesk",
+            "https://metatesk.com/#founder"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: ProfilePage — signals this page authoritatively covers Gunay Imanzade -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://metatesk.com/#profile-gunay",
+        "name": "Gunay Imanzade — Founder & CEO of Metatesk",
+        "description": "Profile of Gunay Imanzade, Founder and CEO of Metatesk. Forbes 30 Under 30 Europe. Presidential Youth Award. Tech Entrepreneur of the Year. 2x Teknofest Winner.",
+        "url": "https://metatesk.com/#founder",
+        "mainEntity": {
+            "@type": "Person",
+            "@id": "https://metatesk.com/#gunay-imanzade"
+        },
+        "dateModified": "2026-04-30",
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://metatesk.com/#website"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication — indexes the product itself -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Metatesk",
+        "alternateName": ["Metatesk VR Education", "Metatesk LMS", "Metatesk Platform"],
+        "description": "Metatesk is an immersive VR and AI education platform featuring virtual subject classrooms, AI teacher companions with four distinct personas, multiplayer learning environments for up to 30 students, and an institutional-grade LMS for national-scale deployment.",
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Virtual Reality Learning",
+        "operatingSystem": "VR Headset, Web Browser, Desktop, Tablet",
+        "url": "https://metatesk.com",
+        "featureList": [
+            "VR Learning Worlds",
+            "AI Teacher with 4 Personas",
+            "Multiplayer Classrooms — 30 students",
+            "LMS Platform",
+            "Real-time Voice Interaction",
+            "Interactive 3D Simulations",
+            "Curriculum-Aligned Content",
+            "Institutional Deployment"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "description": "Contact Metatesk for institutional and government pricing",
+            "url": "https://metatesk.com/#contact"
+        },
+        "author": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage (eligible for rich results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What makes Metatesk different from other edtech?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk is not just content delivery. It combines immersive VR environments, AI teaching support, multiplayer interaction, and institutional-grade LMS infrastructure in one platform. Students don't watch — they step inside. Metatesk was founded by Gunay Imanzade and recognized by Forbes 30 Under 30 Europe."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do students need VR headsets to use Metatesk?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VR headsets provide the most immersive experience, but Metatesk also works through digital interfaces on computers and tablets — flexible for any institution's setup."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the Metatesk AI teacher work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Metatesk AI companion adapts to each student's pace, explains concepts in real-time within the VR environment, and provides personalized guidance. Metatesk offers four AI teacher personas: Professor Ada, Dr. Felix, Professor Maia, and Dr. Rex. The long-term vision includes AI teacher avatars with voice-in/voice-out interaction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Metatesk deploy at national scale?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The proprietary LMS and infrastructure are built specifically for institutional and government-level deployment. Metatesk actively works with B2G partners for public education systems."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What subjects are available on Metatesk?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk covers Mathematics, Physics, Chemistry, Biology, Programming, and Languages — each with a uniquely themed virtual classroom. Curriculum-aligned content is continuously expanding."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who founded Metatesk?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk was founded by Gunay Imanzade, a Forbes 30 Under 30 Europe honoree and recipient of the Presidential Youth Award for Innovation and Entrepreneurship. Gunay Imanzade serves as Founder and CEO of Metatesk, headquartered in Baku, Azerbaijan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What awards has Metatesk and its founder Gunay Imanzade won?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk founder Gunay Imanzade has been recognized with Forbes 30 Under 30 Europe, the Presidential Youth Award for Innovation and Entrepreneurship, Tech Entrepreneur of the Year by IDDA (Azerbaijan's Innovation and Digital Development Agency), and 2x Teknofest Winner. Metatesk has partnered with Google for Startups, ABB, EBRD Star Venture, and Draper University."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: SiteNavigationElement — signals sitelinks to Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Metatesk Site Navigation",
+        "url": "https://metatesk.com",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "About Metatesk",
+                "description": "Why passive education is broken — and how Metatesk fixes it with immersive VR and AI.",
+                "url": "https://metatesk.com/#about"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Product — VR & AI Platform",
+                "description": "Four pillars: VR learning worlds, AI teacher, multiplayer classrooms, and LMS platform.",
+                "url": "https://metatesk.com/#product"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Solutions",
+                "description": "Built for students, educators, schools, and governments at every scale.",
+                "url": "https://metatesk.com/#solutions"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Virtual Classrooms",
+                "description": "Subject-specific 3D worlds — Mathematics, Physics, Chemistry, Biology, Programming, Languages.",
+                "url": "https://metatesk.com/#rooms"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "AI Teacher Personas",
+                "description": "Four distinct AI teaching personalities: Professor Ada, Dr. Felix, Professor Maia, Dr. Rex.",
+                "url": "https://metatesk.com/#personas"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Founder — Gunay Imanzade",
+                "description": "Gunay Imanzade, Forbes 30 Under 30 Europe, founder and CEO of Metatesk.",
+                "url": "https://metatesk.com/#founder"
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "FAQ",
+                "description": "Frequently asked questions about Metatesk, VR education, and the AI teacher system.",
+                "url": "https://metatesk.com/#faq"
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Get a Demo",
+                "description": "Contact Metatesk for a demo — schools, governments, partners, and investors welcome.",
+                "url": "https://metatesk.com/#contact"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage — Azerbaijani (AZ language rich results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "az",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Metatesk nədir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk, Günay İmanzadə tərəfindən qurulan immersiv VR təhsil platformudur. Süni intellekt müəllimləri ilə idarə olunan virtual öyrənmə dünyaları tələbələrə fənləri 3D mühitdə yaşamağa imkan verir — sadəcə izləmək yox, daxil olmaq."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Günay İmanzadə kimdir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Günay İmanzadə Metatesk-in qurucusu və icraçı direktoru, Forbes 30 Under 30 Avropa siyahısının üzvü, İnnovasiya və Sahibkarlıq üzrə Prezident Gənclər Mükafatının qalibi, IDDA-nın İlin Texnologiya Sahibkarı mükafatçısı və 2x Teknofest qalibidir. Azərbaycanda texnologiya ilə təhsili birləşdirən öncül innovatordur."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Metatesk hansı fənləri əhatə edir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Metatesk Riyaziyyat, Fizika, Kimya, Biologiya, Proqramlaşdırma və Dillər fənlərini əhatə edir. Hər fən özünəməxsus virtual sinif otağına malikdir. Müfredatla uzlaşan məzmun davamlı olaraq genişləndirilir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Metatesk-dən istifadə üçün VR dəbilqəsi lazımdırmı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VR dəbilqəsi ən immersiv təcrübəni təmin edir, lakin Metatesk kompüter və planşetlər üzərindən rəqəmsal interfeyslə də işləyir — hər müəssisənin imkanlarına uyğundur."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Metatesk milli miqyasda tətbiq oluna bilərmi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bəli. Metatesk-in xüsusi LMS infrastrukturu məhz institusional və dövlət səviyyəli tətbiqat üçün hazırlanmışdır. Platforma B2G tərəfdaşları ilə ictimai təhsil sistemlərinin modernləşdirilməsi üzrə fəal iş aparır."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: Person — Günay İmanzadə (AZ-language entity for AZ search) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://metatesk.com/#gunay-imanzade",
+        "name": "Günay İmanzadə",
+        "givenName": "Günay",
+        "familyName": "İmanzadə",
+        "alternateName": ["Gunay Imanzade", "Günay Imanzade", "Gunay İmanzadə", "Gunay Imanzadeh"],
+        "inLanguage": "az",
+        "jobTitle": "Qurucu və İcraçı Direktor",
+        "description": "Günay İmanzadə Metatesk-in qurucusu və icraçı direktorudur. Forbes 30 Under 30 Avropa, İnnovasiya və Sahibkarlıq üzrə Prezident Gənclər Mükafatı, IDDA-nın İlin Texnologiya Sahibkarı mükafatı və 2x Teknofest qalibinin sahibi. Azərbaycan edtech sahəsinin öncül simalarından biri.",
+        "worksFor": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization"
+        },
+        "award": [
+            "Forbes 30 Under 30 Avropa",
+            "İnnovasiya və Sahibkarlıq üzrə Prezident Gənclər Mükafatı",
+            "İlin Texnologiya Sahibkarı (IDDA Mükafatları)",
+            "2x Teknofest Qalibi"
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/imgunay/",
+            "https://metatesk.com/#founder"
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebPage — links this page into the site entity graph -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://metatesk.com/#webpage",
+        "name": "Metatesk — Step Inside Education | Gunay Imanzade",
+        "description": "Metatesk, founded by Gunay Imanzade, builds immersive VR learning worlds guided by AI teachers. Forbes 30 Under 30 Europe. Step inside education.",
+        "url": "https://metatesk.com/",
+        "inLanguage": ["en", "az"],
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://metatesk.com/#website"
+        },
+        "about": {
+            "@type": "Organization",
+            "@id": "https://metatesk.com/#organization",
+            "name": "Metatesk"
+        },
+        "author": {
+            "@type": "Person",
+            "@id": "https://metatesk.com/#gunay-imanzade",
+            "name": "Gunay Imanzade"
+        },
+        "datePublished": "2026-01-01",
+        "dateModified": "2026-05-01",
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://metatesk.com/assets/logo.png",
+            "caption": "Metatesk — VR AI Education Platform by Gunay Imanzade"
+        },
+        "significantLink": [
+            "https://metatesk.com/product",
+            "https://metatesk.com/solutions",
+            "https://metatesk.com/gunay-imanzade",
+            "https://metatesk.com/contact"
+        ]
+    }
+    </script>
+
+    <!-- AZ SEO: sync script updates lang/title/meta for ?lang=az crawl and AZ localStorage users -->
+    <script>
+    (function(){
+        try {
+            var isAZ = new URLSearchParams(location.search).get('lang') === 'az' ||
+                       (typeof localStorage !== 'undefined' && localStorage.getItem('metatesk-lang') === 'az');
+            if (!isAZ) return;
+            document.documentElement.lang = 'az';
+            document.title = 'Metatesk — Təhsilə Daxil Ol | Günay İmanzadə';
+            function sm(sel, val) { var el = document.querySelector(sel); if (el) el.setAttribute('content', val); }
+            sm('meta[name="description"]', 'Günay İmanzadə tərəfindən qurulan Metatesk, süni intellekt müəllimləri ilə idarə olunan immersiv VR öyrənmə dünyaları yaradır. Forbes 30 Under 30 Avropa. Tələbələr bilikləri yaşayır — sadəcə əzbərləmir.');
+            sm('meta[name="keywords"]', 'Metatesk, Günay İmanzadə, Gunay Imanzade, VR təhsil, süni intellekt müəllim, immersiv öyrənmə, virtual reallıq, edtech, Azərbaycan startup, Forbes 30 Avropa, Prezident Gənclər Mükafatı, Teknofest qalib, virtual sinif otağı, Metatesk nədir');
+            sm('meta[name="author"]', 'Günay İmanzadə, Metatesk');
+            var og1 = document.querySelector('meta[property="og:title"]');
+            var og2 = document.querySelector('meta[property="og:description"]');
+            var og3 = document.querySelector('meta[property="og:locale"]');
+            var tt1 = document.querySelector('meta[name="twitter:title"]');
+            var tt2 = document.querySelector('meta[name="twitter:description"]');
+            if (og1) og1.setAttribute('content', 'Metatesk — Təhsilə Daxil Ol | Günay İmanzadə');
+            if (og2) og2.setAttribute('content', 'Günay İmanzadə (Forbes 30 Under 30 Avropa) tərəfindən qurulan Metatesk — süni intellekt müəllimləri ilə immersiv VR öyrənmə dünyaları.');
+            if (og3) og3.setAttribute('content', 'az_AZ');
+            if (tt1) tt1.setAttribute('content', 'Metatesk — Təhsilə Daxil Ol | Günay İmanzadə');
+            if (tt2) tt2.setAttribute('content', 'Günay İmanzadə (Forbes 30 Under 30 Avropa) — Metatesk. Süni intellekt müəllimlərinin rəhbərliyi ilə immersiv VR öyrənmə dünyaları.');
+        } catch(e) {}
+    })();
     </script>
 
     <!-- Styles -->
@@ -72,6 +600,9 @@
     <div class="loader" id="loader">
         <div class="loader-inner">
             <div class="loader-3d"><canvas id="loaderCanvas"></canvas></div>
+            <div class="loader-logo-wrap">
+                <img src="assets/logo.png" alt="Metatesk" class="loader-logo-img">
+            </div>
             <div class="loader-text">
                 <span class="ll" style="--i:0">M</span><span class="ll" style="--i:1">E</span><span class="ll" style="--i:2">T</span><span class="ll" style="--i:3">A</span><span class="ll" style="--i:4">T</span><span class="ll" style="--i:5">E</span><span class="ll" style="--i:6">S</span><span class="ll" style="--i:7">K</span>
             </div>
@@ -81,15 +612,14 @@
     </div>
 
     <!-- Nav -->
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="#" class="nav-logo"><img src="assets/logo.png" alt="Metatesk" class="nav-logo-img"></a>
+            <a href="index.html" class="nav-logo" aria-label="Metatesk — VR AI Education Platform"><img src="assets/logo.png" alt="Metatesk — VR AI Education Platform by Gunay Imanzade" class="nav-logo-img"></a>
             <div class="nav-links">
                 <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
                 <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
                 <a href="#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
                 <a href="#founder" class="nav-link" data-i18n="nav.team">Team</a>
-                <a href="#partners" class="nav-link" data-i18n="nav.partners">Partners</a>
                 <a href="#contact" class="nav-link nav-cta" data-i18n="nav.demo">Get a Demo</a>
                 <button class="lang-toggle" id="langToggle" aria-label="Switch language">
                     <span class="lang-active" id="langLabel">EN</span>
@@ -111,7 +641,6 @@
         <a href="#product" class="mob-link" data-i18n="mob.product">Product</a>
         <a href="#solutions" class="mob-link" data-i18n="mob.solutions">Solutions</a>
         <a href="#founder" class="mob-link" data-i18n="mob.team">Team</a>
-        <a href="#partners" class="mob-link" data-i18n="mob.partners">Partners</a>
         <a href="#contact" class="mob-link mob-cta" data-i18n="mob.demo">Get a Demo</a>
         <div class="mob-controls">
             <button class="lang-toggle" id="langToggleMob" aria-label="Switch language">
@@ -142,11 +671,12 @@
         <div class="hero-content">
             <div class="hero-badge anim-in">
                 <span class="badge-dot"></span>
-                The Future of Education is Immersive
+                Metatesk — The Future of Education is Immersive
             </div>
             <h1 class="hero-title anim-in">
-                <span class="hero-line">Step <em>Inside</em></span>
-                <span class="hero-line">Education</span>
+                <span class="sr-only">Metatesk: </span>
+                <span class="hero-line" data-i18n="hero.title1">Step <em>Inside</em></span>
+                <span class="hero-line" data-i18n="hero.title2">Education</span>
             </h1>
             <p class="hero-typed anim-in" id="heroTyped"></p>
             <div class="hero-actions anim-in">
@@ -223,7 +753,7 @@
     </section>
 
     <!-- ==================== SOLUTION — "WHAT IF" ==================== -->
-    <section class="section section-dark">
+    <section class="section section-dark" id="solution">
         <div class="container">
             <div class="sec-head">
                 <span class="tag anim-in">The Solution</span>
@@ -233,7 +763,7 @@
             <div class="solution-split">
                 <div class="sol-visual anim-in">
                     <div class="sol-3d"><canvas id="moleculeCanvas" aria-label="Interactive 3D molecule model — drag to rotate"></canvas></div>
-                    <div class="sol-label"><span class="pulse-dot"></span>Interactive 3D Molecular Visualization — Drag to rotate</div>
+                    <div class="sol-label"><span class="pulse-dot"></span><span data-i18n="sol.label">Interactive 3D Molecular Visualization — Drag to rotate</span></div>
                 </div>
                 <div class="sol-features">
                     <div class="sol-feat anim-in" style="--d:0">
@@ -272,9 +802,9 @@
                     <h3>VR Learning Worlds</h3>
                     <p>Subject-specific virtual classrooms — from chemistry labs to physics simulations to biology explorations. Each environment is uniquely themed and curriculum-aligned. Real education through immersion.</p>
                     <ul class="prod-list">
-                        <li>6+ themed virtual classrooms</li>
-                        <li>Interactive 3D simulations</li>
-                        <li>Works on VR, desktop & tablet</li>
+                        <li data-i18n="prod.vr.li1">6+ themed virtual classrooms</li>
+                        <li data-i18n="prod.vr.li2">Interactive 3D simulations</li>
+                        <li data-i18n="prod.vr.li3">Works on VR, desktop & tablet</li>
                     </ul>
                 </div>
                 <div class="prod-card tilt anim-in" style="--d:1">
@@ -283,9 +813,9 @@
                     <h3>AI Teacher</h3>
                     <p>An intelligent educational guide that personalizes lessons, answers questions contextually, and adapts to each student's speed. Building toward AI teacher avatars and digital twin teaching.</p>
                     <ul class="prod-list">
-                        <li>Real-time voice interaction</li>
-                        <li>Adaptive pacing</li>
-                        <li>Teacher assistance tools</li>
+                        <li data-i18n="prod.ai.li1">Real-time voice interaction</li>
+                        <li data-i18n="prod.ai.li2">Adaptive pacing</li>
+                        <li data-i18n="prod.ai.li3">Teacher assistance tools</li>
                     </ul>
                 </div>
                 <div class="prod-card tilt anim-in" style="--d:2">
@@ -294,9 +824,9 @@
                     <h3>Multiplayer</h3>
                     <p>30 students in shared virtual classrooms with real-time voice communication. Collaborative experiments, teacher-led group sessions, and AI-supported class management.</p>
                     <ul class="prod-list">
-                        <li>30-student capacity</li>
-                        <li>Live voice chat</li>
-                        <li>Collaborative experiments</li>
+                        <li data-i18n="prod.multi.li1">30-student capacity</li>
+                        <li data-i18n="prod.multi.li2">Live voice chat</li>
+                        <li data-i18n="prod.multi.li3">Collaborative experiments</li>
                     </ul>
                 </div>
                 <div class="prod-card tilt anim-in" style="--d:3">
@@ -305,17 +835,18 @@
                     <h3>LMS Platform</h3>
                     <p>Proprietary learning management system that grew from internal tool to standalone product. Complete education infrastructure that institutions adopt to run and scale their operations.</p>
                     <ul class="prod-list">
-                        <li>Institutional deployment</li>
-                        <li>Progress analytics</li>
-                        <li>Multi-school management</li>
+                        <li data-i18n="prod.lms.li1">Institutional deployment</li>
+                        <li data-i18n="prod.lms.li2">Progress analytics</li>
+                        <li data-i18n="prod.lms.li3">Multi-school management</li>
                     </ul>
                 </div>
             </div>
+            <div style="text-align:center;margin-top:48px"><a href="product.html" class="btn btn-outline">Explore the full product →</a></div>
         </div>
     </section>
 
     <!-- ==================== HOW IT WORKS ==================== -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="how-it-works">
         <div class="container">
             <div class="sec-head">
                 <span class="tag anim-in">How It Works</span>
@@ -361,29 +892,12 @@
                     <p>Deploy immersive AI-powered learning across public education systems. National-scale infrastructure for the future of an entire country's education.</p>
                 </div>
             </div>
+            <div style="text-align:center;margin-top:48px"><a href="solutions.html" class="btn btn-outline">Explore all solutions →</a></div>
         </div>
     </section>
 
-    <!-- ==================== IMPACT ==================== -->
-    <!-- <section class="section section-dark" id="impact">
-        <div class="container">
-            <div class="sec-head">
-                <span class="tag anim-in">Traction</span>
-                <h2 class="sec-title anim-in">Real company.<br><span class="grad">Real validation.</span></h2>
-                <p class="sec-sub anim-in">Metatesk is not a concept. It's a revenue-generating company with institutional contracts, net dollar retention above 120%, and active B2B/B2G deployment across markets including China and Azerbaijan.</p>
-            </div>
-            <div class="impact-row">
-                <div class="imp-card tilt anim-in" style="--d:0"><div class="imp-val"><span class="counter" data-count="120">0</span>%</div><div class="imp-lab">Net Dollar Retention</div></div>
-                <div class="imp-card tilt anim-in" style="--d:1"><div class="imp-val">B2B + B2G</div><div class="imp-lab">Revenue Channels</div></div>
-                <div class="imp-card tilt anim-in" style="--d:2"><div class="imp-val"><span class="counter" data-count="6">0</span>+</div><div class="imp-lab">Subject Environments</div></div>
-                <div class="imp-card tilt anim-in" style="--d:3"><div class="imp-val">$2.5M</div><div class="imp-lab">Raising to Scale</div></div>
-            </div>
-        </div>
-        <div class="impact-globe"><canvas id="globeCanvas" aria-label="Animated wireframe globe"></canvas></div>
-    </section> -->
-
     <!-- ==================== VIRTUAL CLASSROOMS ==================== -->
-    <section class="section">
+    <section class="section" id="rooms">
         <div class="mesh mesh-r"></div>
         <div class="container">
             <div class="sec-head">
@@ -461,7 +975,7 @@
     </section>
 
     <!-- ==================== AI TEACHER PERSONAS ==================== -->
-    <section class="section">
+    <section class="section" id="personas">
         <div class="mesh mesh-l"></div>
         <div class="container">
             <div class="sec-head">
@@ -514,12 +1028,12 @@
                 <canvas id="classroomCanvas" aria-label="Interactive 3D virtual classroom preview — drag to look around"></canvas>
                 <div class="classroom-hud">
                     <div class="hud-left">
-                        <div class="hud-tag">LIVE 3D CLASSROOM</div>
-                        <div class="hud-sub">AI Teacher Active &middot; 6 Students Connected</div>
+                        <div class="hud-tag" data-i18n="hud.live">LIVE 3D CLASSROOM</div>
+                        <div class="hud-sub" data-i18n="hud.sub">AI Teacher Active · 6 Students Connected</div>
                     </div>
                     <div class="hud-right">
-                        <div class="hud-pill"><span class="hud-dot"></span>Interactive</div>
-                        <div class="hud-hint">Drag to look around</div>
+                        <div class="hud-pill"><span class="hud-dot"></span><span data-i18n="hud.interactive">Interactive</span></div>
+                        <div class="hud-hint" data-i18n="hud.hint">Drag to look around</div>
                     </div>
                 </div>
             </div>
@@ -527,20 +1041,46 @@
     </section>
 
     <!-- ==================== FOUNDER ==================== -->
-    <section class="section section-alt" id="founder">
+    <section class="section section-alt" id="founder" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Metatesk">
+        <meta itemprop="url" content="https://metatesk.com">
         <div class="container">
             <div class="sec-head">
                 <span class="tag anim-in">Behind Metatesk</span>
                 <h2 class="sec-title anim-in">Built by people who believe<br><span class="grad">education should feel alive.</span></h2>
                 <p class="sec-sub anim-in">Metatesk started from a real frustration: watching science education remain passive and outdated while the world became interactive and digital. The question was simple — <strong>what if students could enter the lesson instead of just watching it?</strong> Early VR prototypes showed children responding with genuine excitement. That spark became a company.</p>
             </div>
+
+            <!-- Gunay Imanzade founder block — authoritative identity signals for search -->
+            <div class="founder-block anim-in" id="gunay-imanzade" itemprop="founder" itemscope itemtype="https://schema.org/Person" itemid="https://metatesk.com/#gunay-imanzade">
+                <h3 itemprop="name">Gunay Imanzade</h3>
+                <p class="founder-role">
+                    <span itemprop="jobTitle" data-i18n="founder.jobtitle">Founder &amp; CEO</span>
+                    <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                        · <span itemprop="name">Metatesk</span>
+                    </span>
+                </p>
+                <p class="founder-bio">
+                    <span itemprop="description" data-i18n="founder.bio">Gunay Imanzade is the founder and CEO of Metatesk, the Azerbaijan-based edtech company building immersive VR and AI-powered learning environments for schools, governments, and learners worldwide. A Forbes 30 Under 30 Europe honoree, recipient of the Presidential Youth Award for Innovation and Entrepreneurship, and named Tech Entrepreneur of the Year by Azerbaijan's Innovation and Digital Development Agency (IDDA), Gunay Imanzade leads Metatesk's mission to transform education — making it an experience students step inside, not just something they read.</span>
+                </p>
+                <p class="founder-links">
+                    <a href="https://www.linkedin.com/in/imgunay/" rel="noopener me" target="_blank" itemprop="sameAs">LinkedIn — Gunay Imanzade</a>
+                </p>
+                <meta itemprop="nationality" content="Azerbaijani">
+                <meta itemprop="url" content="https://metatesk.com/#founder">
+                <meta itemprop="award" content="Forbes 30 Under 30 Europe">
+                <meta itemprop="award" content="Presidential Youth Award for Innovation and Entrepreneurship">
+                <meta itemprop="award" content="Tech Entrepreneur of the Year — IDDA Awards">
+                <meta itemprop="award" content="2x Teknofest Winner">
+            </div>
+
             <div class="awards-grid anim-in">
                 <div class="award-card"><div class="award-icon">
                     <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l4 8 9 1.3-6.5 6.3L24 27 16 22.5 8 27l1.5-9.4L3 11.3 12 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                </div><h4>Forbes 30 Under 30</h4><p>Europe</p></div>
+                </div><h4>Forbes 30 Under 30</h4><p>Europe — Gunay Imanzade</p></div>
                 <div class="award-card"><div class="award-icon">
                     <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l10 5v8c0 7-4 12-10 14-6-2-10-7-10-14V9L16 4z" stroke="currentColor" stroke-width="1.5"/></svg>
-                </div><h4>Presidential Youth Award</h4><p>Innovation & Entrepreneurship</p></div>
+                </div><h4>Presidential Youth Award</h4><p>Innovation &amp; Entrepreneurship</p></div>
                 <div class="award-card"><div class="award-icon">
                     <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div><h4>Tech Entrepreneur of the Year</h4><p>IDDA Awards</p></div>
@@ -548,29 +1088,12 @@
                     <svg viewBox="0 0 32 32" fill="none"><path d="M6 24h20M10 24V14l6-8 6 8v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div><h4>2x Teknofest Winner</h4><p>Technology Competition</p></div>
             </div>
+            <div style="text-align:center;margin-top:48px"><a href="gunay-imanzade.html" class="btn btn-outline">More about Gunay →</a></div>
         </div>
     </section>
 
-    <!-- ==================== PARTNERS ==================== -->
-    <!-- <section class="section" id="partners">
-        <div class="container">
-            <div class="sec-head">
-                <span class="tag anim-in">Ecosystem</span>
-                <h2 class="sec-title anim-in">Trusted by leaders.<br><span class="grad">Backed by innovators.</span></h2>
-            </div>
-            <div class="partners-grid anim-in">
-                <div class="partner"><div class="partner-name">ABB</div><div class="partner-desc">Azerbaijan's largest bank — official VR/AR partnership</div></div>
-                <div class="partner"><div class="partner-name">RC Challenge</div><div class="partner-desc">World's largest student STEM robotics competition — official local partner</div></div>
-                <div class="partner"><div class="partner-name">EBRD</div><div class="partner-desc">European Bank for Reconstruction and Development — Star Venture engagement</div></div>
-                <div class="partner"><div class="partner-name">Google for Startups</div><div class="partner-desc">Silkway Accelerator — selected program participant</div></div>
-                <div class="partner"><div class="partner-name">Draper University</div><div class="partner-desc">Hero Training program by Tim Draper & Astana Hub</div></div>
-                <div class="partner"><div class="partner-name">IDDA</div><div class="partner-desc">Innovation and Digital Development Agency of Azerbaijan</div></div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- ==================== FAQ ==================== -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="faq">
         <div class="container">
             <div class="sec-head">
                 <span class="tag anim-in">FAQ</span>
@@ -587,7 +1110,7 @@
     </section>
 
     <!-- ==================== VISION ==================== -->
-    <section class="section section-vision">
+    <section class="section section-vision" id="vision">
         <div class="vision-stars"></div>
         <div class="container">
             <div class="vision-inner anim-in">
@@ -635,11 +1158,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
-                <div class="footer-brand"><img src="assets/logo.png" alt="Metatesk" class="footer-logo"><p>Building immersive VR learning worlds guided by AI teachers.</p></div>
+                <div class="footer-brand"><img src="assets/logo.png" alt="Metatesk — VR AI Education Platform" class="footer-logo"><p>Metatesk builds immersive VR learning worlds guided by AI teachers. Founded by <a href="gunay-imanzade.html" class="footer-founder-link">Gunay Imanzade</a> — Forbes 30 Under 30 Europe.</p></div>
                 <div class="footer-cols">
-                    <div class="fcol"><h4 data-i18n="ft.product">Product</h4><a href="#product" data-i18n="ft.vr">VR Labs</a><a href="#product" data-i18n="ft.ai">AI Teacher</a><a href="#product" data-i18n="ft.lms">LMS</a><a href="#product" data-i18n="ft.multi">Multiplayer</a></div>
-                    <div class="fcol"><h4 data-i18n="ft.solutions">Solutions</h4><a href="#solutions" data-i18n="ft.students">Students</a><a href="#solutions" data-i18n="ft.educators">Educators</a><a href="#solutions" data-i18n="ft.schools">Schools</a><a href="#solutions" data-i18n="ft.govs">Governments</a></div>
-                    <div class="fcol"><h4 data-i18n="ft.company">Company</h4><a href="#about" data-i18n="ft.about">About</a><a href="#founder" data-i18n="ft.team">Team</a><a href="#partners" data-i18n="ft.partners">Partners</a><a href="#contact" data-i18n="ft.contact">Contact</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.product">Product</h4><a href="product.html" data-i18n="ft.vr">VR Labs</a><a href="product.html" data-i18n="ft.ai">AI Teacher</a><a href="product.html" data-i18n="ft.lms">LMS</a><a href="product.html" data-i18n="ft.multi">Multiplayer</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.solutions">Solutions</h4><a href="solutions.html" data-i18n="ft.students">Students</a><a href="solutions.html" data-i18n="ft.educators">Educators</a><a href="solutions.html" data-i18n="ft.schools">Schools</a><a href="solutions.html" data-i18n="ft.govs">Governments</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.company">Company</h4><a href="#about" data-i18n="ft.about">About</a><a href="gunay-imanzade.html" data-i18n="ft.team">Team</a><a href="contact.html" data-i18n="ft.contact">Contact</a></div>
                 </div>
             </div>
             <div class="footer-bot"><p>&copy; 2026 Metatesk. All rights reserved.</p></div>
