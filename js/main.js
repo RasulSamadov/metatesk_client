@@ -82,7 +82,7 @@ function initTypedText() {
     if (!el) return;
     const getLines = () => window._typedLines || [
         'A multiplayer VR/AI world where learners master subjects as if playing a game.',
-        'Immersive education experiences powered by AI teachers and virtual reality.',
+        // 'Immersive education experiences powered by AI teachers and virtual reality.', /* AI-teacher hidden */
         'Education infrastructure for schools, institutions, and governments at scale.',
         'Where students experience knowledge — instead of just memorizing it.'
     ];

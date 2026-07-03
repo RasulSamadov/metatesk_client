@@ -122,13 +122,13 @@
             {
                 "@type": "Offer",
                 "name": "Metatesk for Students",
-                "description": "Immersive VR learning worlds and AI teachers that help students experience education rather than just memorize it.",
+                "description": "Immersive VR learning worlds that help students experience education rather than just memorize it.",
                 "url": "https://metatesk.com/solutions#students"
             },
             {
                 "@type": "Offer",
                 "name": "Metatesk for Educators",
-                "description": "AI teaching tools, real-time analytics, class management, and immersive content that amplifies every educator.",
+                "description": "AI tools, real-time analytics, class management, and immersive content that amplifies every educator.",
                 "url": "https://metatesk.com/solutions#educators"
             },
             {
@@ -158,7 +158,7 @@
                 "name": "What is Metatesk and who founded it?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Metatesk is an immersive VR and AI education platform founded by Gunay Imanzade, Forbes 30 Under 30 Europe honoree. It serves students, educators, schools, and governments with virtual reality learning worlds, AI teachers, multiplayer classrooms, and national-scale LMS infrastructure."
+                    "text": "Metatesk is an immersive VR and AI education platform founded by Gunay Imanzade, Forbes 30 Under 30 Europe honoree. It serves students, educators, schools, and governments with virtual reality learning worlds, multiplayer classrooms, and national-scale LMS infrastructure."
                 }
             },
             {
@@ -201,7 +201,7 @@
                 "name": "Metatesk nədir və kim tərəfindən qurulub?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Metatesk Günay İmanzadə — Forbes 30 Under 30 Avropa mükafatçısı — tərəfindən qurulan immersiv VR və Sİ təhsil platformasıdır. Tələbələr, müəllimlər, məktəblər və hökumətlər üçün virtual reallıq öyrənmə dünyaları, Sİ müəllimlər, multiplayer siniflər və milli miqyaslı LMS infrastrukturu ilə xidmət göstərir."
+                    "text": "Metatesk Günay İmanzadə — Forbes 30 Under 30 Avropa mükafatçısı — tərəfindən qurulan immersiv VR və Sİ təhsil platformasıdır. Tələbələr, müəllimlər, məktəblər və hökumətlər üçün virtual reallıq öyrənmə dünyaları, multiplayer siniflər və milli miqyaslı LMS infrastrukturu ilə xidmət göstərir."
                 }
             },
             {
@@ -283,7 +283,7 @@
             document.title = 'Metatesk Həlləri — Məktəblər, Hökumətlər, Müəllimlər & Tələbələr üçün VR & Sİ Təhsil | Günay İmanzadə';
             function sm(sel, val) { var el = document.querySelector(sel); if (el) el.setAttribute('content', val); }
             sm('meta[name="description"]', 'Metatesk həlləri məktəblər, hökumətlər, müəllimlər və tələbələr üçün. Günay İmanzadə tərəfindən qurulan milli miqyaslı immersiv VR və Sİ öyrənmə platforması — Forbes 30 Under 30 Avropa.');
-            sm('meta[name="keywords"]', 'Metatesk, Metatesk həlləri, məktəblər üçün Metatesk, hökumətlər üçün Metatesk, Günay İmanzadə, VR təhsil, Sİ müəllim, milli təhsil platforması, Azərbaycan edtech');
+            sm('meta[name="keywords"]', 'Metatesk, Metatesk həlləri, məktəblər üçün Metatesk, hökumətlər üçün Metatesk, Günay İmanzadə, VR təhsil, milli təhsil platforması, Azərbaycan edtech');
             sm('meta[name="author"]', 'Günay İmanzadə, Metatesk');
             var og1 = document.querySelector('meta[property="og:title"]');
             var og2 = document.querySelector('meta[property="og:description"]');
@@ -395,10 +395,10 @@
                     <div class="sol-num">01</div>
                     <h2 data-i18n="sol.students.h2">For <span class="grad">Students</span></h2>
                     <p data-i18n="sol.students.p1">Education shouldn't be about memorizing what you can't see. Metatesk puts students inside the lesson — inside the chemistry reaction, the physics simulation, the biological ecosystem — so concepts become experiences, not abstract facts.</p>
-                    <p data-i18n="sol.students.p2">With an AI teacher that adapts to each student's learning style and pace, and multiplayer classrooms that make learning social, students engage with material in ways that genuinely build understanding.</p>
+                    <p data-i18n="sol.students.p2">With multiplayer classrooms that make learning social, students engage with material in ways that genuinely build understanding.</p>
                     <ul class="sol-bullets">
                         <li data-i18n="sol.students.li1">Experience subjects in fully immersive 3D virtual environments</li>
-                        <li data-i18n="sol.students.li2">Choose your AI teacher from 4 distinct teaching personas</li>
+                        <!-- AI-TEACHER HIDDEN: <li data-i18n="sol.students.li2">Choose your AI teacher from 4 distinct teaching personas</li> -->
                         <li data-i18n="sol.students.li3">Learn alongside classmates in real-time shared sessions</li>
                         <li data-i18n="sol.students.li4">Practice and experiment without limits or real-world risk</li>
                         <li data-i18n="sol.students.li5">Access on VR headset, desktop, or tablet — wherever you learn</li>
@@ -414,6 +414,7 @@
                             <span data-i18n="sol.students.feat1.sub">Step inside Chemistry, Physics, Biology, Math &amp; more</span>
                         </div>
                     </div>
+                    <!-- AI-TEACHER HIDDEN
                     <div class="sol-visual-item">
                         <div class="sol-visual-icon" style="background:rgba(85,203,249,.1);color:var(--cyan)">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
@@ -423,6 +424,7 @@
                             <span data-i18n="sol.students.feat2.sub">Real-time voice guidance that adapts to your pace</span>
                         </div>
                     </div>
+                    -->
                     <div class="sol-visual-item">
                         <div class="sol-visual-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -480,7 +482,7 @@
                         </div>
                         <div class="sol-visual-text">
                             <strong data-i18n="sol.educators.feat2">AI Handles Individual Q&amp;A</strong>
-                            <span data-i18n="sol.educators.feat2.sub">4 AI personas answer student questions so you don't have to</span>
+                            <span data-i18n="sol.educators.feat2.sub">AI answers routine student questions so you don't have to</span>
                         </div>
                     </div>
                     <div class="sol-visual-item">
@@ -642,10 +644,12 @@
                     <div class="stat-box-num" data-count="6" data-suffix="+" style="background:linear-gradient(135deg,var(--green),#22C55E);-webkit-background-clip:text;background-clip:text">6+</div>
                     <div class="stat-box-label" data-i18n="sol.impact.stat2">Subjects with immersive environments</div>
                 </div>
+                <!-- AI-TEACHER HIDDEN
                 <div class="stat-box">
                     <div class="stat-box-num" data-count="4" data-suffix="" style="background:linear-gradient(135deg,var(--orange),#F97316);-webkit-background-clip:text;background-clip:text">4</div>
                     <div class="stat-box-label" data-i18n="sol.impact.stat3">AI teacher personas for personalized learning</div>
                 </div>
+                -->
                 <div class="stat-box">
                     <div class="stat-box-num">∞</div>
                     <div class="stat-box-label" data-i18n="sol.impact.stat4">National scale deployment capacity</div>
@@ -673,9 +677,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
-                <div class="footer-brand"><img src="assets/logo.png" alt="Metatesk" class="footer-logo"><p>Metatesk builds immersive VR learning worlds guided by AI teachers. Founded by <a href="gunay-imanzade.html" class="footer-founder-link">Gunay Imanzade</a> — Forbes 30 Under 30 Europe.</p></div>
+                <div class="footer-brand"><img src="assets/logo.png" alt="Metatesk" class="footer-logo"><p>Metatesk builds immersive VR learning worlds. Founded by <a href="gunay-imanzade.html" class="footer-founder-link">Gunay Imanzade</a> — Forbes 30 Under 30 Europe.</p></div>
                 <div class="footer-cols">
-                    <div class="fcol"><h4 data-i18n="ft.product">Product</h4><a href="product.html" data-i18n="ft.vr">VR Labs</a><a href="product.html" data-i18n="ft.ai">AI Teacher</a><a href="product.html" data-i18n="ft.lms">LMS</a><a href="product.html" data-i18n="ft.multi">Multiplayer</a></div>
+                    <div class="fcol"><h4 data-i18n="ft.product">Product</h4><a href="product.html" data-i18n="ft.vr">VR Labs</a><!-- AI-TEACHER HIDDEN: <a href="product.html" data-i18n="ft.ai">AI Teacher</a> --><a href="product.html" data-i18n="ft.lms">LMS</a><a href="product.html" data-i18n="ft.multi">Multiplayer</a></div>
                     <div class="fcol"><h4 data-i18n="ft.solutions">Solutions</h4><a href="solutions.html" data-i18n="ft.students">Students</a><a href="solutions.html" data-i18n="ft.educators">Educators</a><a href="solutions.html" data-i18n="ft.schools">Schools</a><a href="solutions.html" data-i18n="ft.govs">Governments</a></div>
                     <div class="fcol"><h4 data-i18n="ft.company">Company</h4><a href="index.html#about" data-i18n="ft.about">About</a><a href="gunay-imanzade.html" data-i18n="ft.team">Team</a><a href="contact.html" data-i18n="ft.contact">Contact</a></div>
                 </div>
